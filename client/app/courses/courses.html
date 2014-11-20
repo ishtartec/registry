@@ -1,0 +1,85 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+
+  <div class="row">
+    <button class="btn btn-primary btn-lg"  ng-click="open()">
+        <span class="glyphicon glyphicon-flash"></span> Crear nuevo Curso
+    </button>
+    <hr>
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Cursos</strong></div>
+      <div class="panel-body">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Curso</th>
+            <th>Acciones</th>
+          </tr>
+
+          </thead>
+          <tbody ng-repeat="course in courses track by course._id">
+          <tr >
+            <td>{{course.name}}</td>
+            <td>
+              <div class="btn-group btn-xs">
+                <button type="button" class="btn btn-default btn-xs" ng-click="viewCourse(course._id)"
+                  ><span class="glyphicon glyphicon-eye-open"></span></button>
+                <button type="button" class="btn btn-default btn-xs" ng-click="open(lg,course)"
+                  ><span class="glyphicon glyphicon-pencil"></span></button>
+                <button type="button" class="btn btn-danger btn-xs" ng-click="deleteCourse(course._id)"
+                  ><span class="glyphicon glyphicon-trash"></span></button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p><a href="https://www.corenetworks.es">@sergio</a></p>
+  </div>
+</footer>
+
+  <!-- Modal -->
+<script type="text/ng-template" id="courseTemplate.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Edici&oacute;n de Curso</h3>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Curso</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Nombre del Curso</label>
+          <div class="col-md-4">
+            <input name="courseName" type="text" placeholder="Nombre del curso" ng-model="course.name" class="form-control input-md">
+          </div>
+        </div>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Password</label>
+          <div class="col-md-4">
+            <input name="courseStart" type="text" ng-model="course.password" class="form-control input-md">
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+</script>

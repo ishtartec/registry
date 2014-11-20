@@ -1,0 +1,58 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Hola, 'Hola!</h1>
+    <p class="lead">Bienvenido a Core Networks</p>
+    <img src="assets/images/logocore.png" alt="Core Networks">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <form class="form-horizontal">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Formulario de Inscripci&oacute;n</legend>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Seleccione el curso</label>
+          <div class="col-md-4">
+            <select ng-model="selectedCourse" ng-options="course.name for course in courses" class="form-control"></select>
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Password</label>
+          <div class="col-md-4">
+            <input ng-model="selectedPassword" type="password" placeholder="Introduzca la clave de registro" class="form-control input-md">
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <div class="col-md-offset-4 col-md-4">
+            <button class="btn btn-primary" ng-click="startRegister()">Continuar</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+
+    <section>
+      <p class="help-block"><alert class="alert-danger animated fadeIn" ng-hide="!errors.other">{{ errors.other }}</alert></p>
+    </section>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Sergio Rodriguez de Guzman |
+        <a href="https://es.linkedin.com/in/sergiorodriguezdeguzman">@sergio</a>
+      </p>
+  </div>
+</footer>

@@ -1,0 +1,224 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+<div class="row">
+  <form class="form-horizontal">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Formulario de Registro</legend>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Nombre de la Especialidad</label>
+        <div class="col-md-4">
+          <input ng-model="student.especialidad" type="text" placeholder="Nombre de la Especialidad" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <!--
+      <div class="form-group">
+        <label class="col-md-4 control-label">Fecha de la prueba</label>
+        <div class="col-md-4">
+          <input ng-model="student.fecha" type="date" class="form-control input-md" required="">
+        </div>
+      </div>
+      -->
+
+      <div class="row">
+        <label class="col-md-4 control-label">Fecha de la prueba</label>
+        <div class="col-md-4">
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="student.fecha" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">DNI</label>
+        <div class="col-md-4">
+          <input ng-model="student.dni" type="text" placeholder="DNI" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Apellidos</label>
+        <div class="col-md-4">
+          <input ng-model="student.apellidos" type="text" placeholder="Apellidos" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Nombre</label>
+        <div class="col-md-4">
+          <input ng-model="student.nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <!--
+      <div class="form-group">
+        <label class="col-md-4 control-label">Fecha de Nacimiento</label>
+        <div class="col-md-4">
+          <input ng-model="student.nacimiento" type="date" class="form-control input-md" required="">
+        </div>
+      </div>
+      -->
+
+      <div class="row">
+        <label class="col-md-4 control-label">Fecha de Nacimiento</label>
+        <div class="col-md-4">
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="student.nacimiento" is-open="openedNacimiento" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openNacimiento($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Dirección</label>
+        <div class="col-md-4">
+          <input ng-model="student.direccion" type="text" placeholder="Direccion" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Código Postal</label>
+        <div class="col-md-4">
+          <input ng-model="student.codigopostal" type="text" placeholder="Código Postal" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Población</label>
+        <div class="col-md-4">
+          <input ng-model="student.poblacion" type="text" placeholder="Población" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Teléfono</label>
+        <div class="col-md-4">
+          <input ng-model="student.telefono" type="tel" placeholder="Teléfono" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Móvil</label>
+        <div class="col-md-4">
+          <input ng-model="student.movil" type="tel" placeholder="Móvil" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>
+        <div class="col-md-4">
+          <input ng-model="student.email" type="email" placeholder="E-Mail" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Titulación</label>
+        <div class="col-md-4">
+          <input ng-model="student.titulacion" type="text" placeholder="Titulación" class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <!--
+      <div class="form-group">
+        <label class="col-md-4 control-label">Resultado</label>
+        <div class="col-md-4">
+          <input ng-model="student.resultado" type="text" placeholder="Resultado" class="form-control input-md" required="">
+        </div>
+      </div>
+      -->
+
+      <!-- Multiple Radios (inline) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">¿Trabaja actualmente?</label>
+        <div class="col-md-4">
+          <label class="radio-inline">
+            <input type="radio" name="trabaja" value="true" ng-model="student.trabaja" checked="checked">
+            Sí
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="trabaja" ng-model="student.trabaja" value="false">
+            No
+          </label>
+        </div>
+      </div>
+
+      <!-- Multiple Radios (inline) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">¿Cobra prestación?</label>
+        <div class="col-md-4">
+          <label class="radio-inline">
+            <input type="radio" name="prestaciones" ng-model="student.prestaciones" value="true" checked="checked">
+            Sí
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="prestaciones" ng-model="student.prestaciones" value="false">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Discapacidad</label>
+        <div class="col-md-4">
+          <input ng-model="student.discapacidad" type="text" placeholder="Indique la discapacidad si aplica"
+                 class="form-control input-md" required="">
+        </div>
+      </div>
+
+      <!-- Multiple Radios (inline) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">¿Tiene experiencia laboral relacionada con el curso?</label>
+        <div class="col-md-4">
+          <label class="radio-inline">
+            <input type="radio" name="experiencia" ng-model="student.experiencia" value="true" checked="checked">
+            Sí
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="experiencia" ng-model="student.experiencia" value="false">
+            No
+          </label>
+        </div>
+      </div>
+
+      <!-- Multiple Radios (inline) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">¿Realiza actualmente ó ha realizado algún curso en este centro?</label>
+        <div class="col-md-4">
+          <label class="radio-inline">
+            <input type="radio" name="cursoactual" ng-model="student.cursoactual" value="true" checked="checked">
+            Sí
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="cursoactual" ng-model="student.cursoactual" value="false">
+            No
+          </label>
+        </div>
+      </div>
+
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button class="btn btn-primary" ng-click="studentSave()">Registrar</button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p><a href="https://es.linkedin.com/in/sergiorodriguezdeguzman">@sergio</a></p>
+  </div>
+</footer>

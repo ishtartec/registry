@@ -1,0 +1,72 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+  <div class="row">
+    <button class="btn btn-primary btn-lg" ng-click="exportData()">
+      <span class="glyphicon glyphicon-flash"></span> Exportar Datos
+    </button>
+    <hr>
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Alumnos</strong></div>
+      <div class="panel-body">
+        <div id="exportable">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Especialidad</th>
+            <th>Fecha</th>
+            <th>DNI</th>
+            <th>Apellidos</th>
+            <th>Nombre</th>
+            <th>Nacimiento</th>
+            <th>Dirección</th>
+            <th>CP</th>
+            <th>Población</th>
+            <th>Teléfono</th>
+            <th>Móvil</th>
+            <th>E-Mail</th>
+            <th>Titulación</th>
+            <th>Resultado</th>
+            <th>Trabaja</th>
+            <th>Prestación</th>
+            <th>Discapacidad</th>
+            <th>Experiencia</th>
+            <th>CursoActual</th>
+            <th>Acciones</th>
+          </tr>
+
+          </thead>
+          <tbody ng-repeat="student in course.students">
+          <tr >
+            <td>{{student.especialidad}}</td>
+            <td>{{student.fecha}}</td>
+            <td>{{student.dni}}</td>
+            <td>{{student.apellidos}}</td>
+            <td>{{student.nombre}}</td>
+            <td>{{student.nacimiento}}</td>
+            <td>{{student.direccion}}</td>
+            <td>{{student.codigopostal}}</td>
+            <td>{{student.poblacion}}</td>
+            <td>{{student.telefono}}</td>
+            <td>{{student.movil}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.titulacion}}</td>
+            <td>{{student.resultado}}</td>
+            <td>{{student.trabaja}}</td>
+            <td>{{student.prestaciones}}</td>
+            <td>{{student.discapacidad}}</td>
+            <td>{{student.experiencia}}</td>
+            <td>{{student.cursoactual}}</td>
+            <td>
+              <div class="btn-group btn-xs">
+                <button type="button" class="btn btn-danger btn-xs" ng-click="deleteStudent(student._id)"
+                  ><span class="glyphicon glyphicon-trash"></span></button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
