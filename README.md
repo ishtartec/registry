@@ -1,8 +1,10 @@
-# CoreRegistry
-![Core icon](http://www.corenetworks.es/templates/vantage_j3/styles/red/images/logo.png)
+# StudentsRegistry
+
 
 ## Overview
-**CorePurchases** is based on the latest web technologies:
+**Registry** is a webapp for student registration and data management. It is intended for internal usage only.
+
+**Registry** is based on the latest web technologies:
 
 * AngularJS
 * Bootstrap 3
